@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: consolas;
+}
+
+.fa-solid {
+    cursor: pointer;
+}
+
+.img {
+    width: 50px;
+    cursor: pointer;
+}
+
+.imgC {
+    width: 100px;
+}
+
+.header {
+    margin: auto;
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin-left: 100px;
+    
+}
+
+.main-menu a::before {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 0%;
+    background: red;
+}
+
+.main-menu a:hover::before {
+    width: 50px;
+    transform: translateX(50%);
+    transition: 0.5s;
+}
+
+
+
+body {
+
+    min-height: 100vh;
+    background: #40739e;
+}
+
+.scan {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scan .fingerprint {
+    position: relative;
+    width: 300px;
+    height: 380px;
+    background: url(fingerPrint_01.png);
+    background-size: 300px;
+}
+
+.scan .fingerprint::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(fingerPrint_02.png);
+    background-size: 300px;
+    animation: anime 2s ease-in-out infinite;
+}
+
+@keyframes anime {
+
+    0%,
+    100% {
+        height: 0%;
+    }
+
+    50% {
+        height: 100%;
+    }
+}
+
+.scan .fingerprint::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2%;
+    background-color: rgb(114, 167, 247);
+
+    animation: anime_2 2s ease-in-out infinite;
+}
+
+@keyframes anime_2 {
+
+    0%,
+    100% {
+        top: 0%;
+    }
+
+    50% {
+        top: 100%;
+    }
+}
+
+.scan .scan-text {
+    color: red;
+    font-size: 30px;
+    animation: anime_3 2s ease-in-out infinite;
+}
+
+@keyframes anime_3 {
+
+    0%,
+    25%,
+    100% {
+        opacity: 0;
+    }
+
+    50%,
+    60% {
+        opacity: 1;
+    }
+}
+
+.search-box {
+    background: white;
+    padding: 10px;
+    border-radius: 30px;
+    margin-top: 10px;
+    float: left;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    width: 0;
+    transition: 0.5s;
+
+}
+
+.search-box button {
+    border: none;
+    background: none;
+    padding: 0;
+
+}
+
+.search-box:hover input,
+.search-box input:valid {
+    width: 300px;
+    transition: 0.5s;
+}
+
+#backtotop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background: #ff7675;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+}
+
+.check{
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 20px;
+    background: #092c3e;
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+#dark_button{
+    opacity: 0;
+}
+
+.dark-mode{
+    background: black;
+    color: #fff;
+    transition: 0.5s;
+    
+}
+
+.check::before{
+    content: '';
+    top: 2px;
+    left: 2px;
+    position: absolute;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+    
+}
+
+.check.switch::before{
+    transform: translateX(-100px);
+    transition: 0.5s;
+}
+.check.switch::after{
+    transform: translateX(0);
+    transition: 0.5s;
+}
+
+.check::after{
+    content: '';
+    top: 2px;
+    right: 2px;
+    position: absolute;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transform: translateX(100px);
+    transition: 0.5s;
+}
+.btn{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.btn .play{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: #f42e79;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 25px #f42e7966;
+}
+.btn.active .play{
+    box-shadow: 0 0 0 150vh #f42e79;
+    transition: 0.5s;
+
+}
+.btn .play::before
+{
+    content: '';
+    position: absolute;
+    border: 25px solid #fff;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 0px solid transparent;
+    transform: translateX(5px);
+
+}
+.btn p
+{
+    font-weight: 500;
+    font-size: 1em;
+    color: #888;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+.clip
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: 0.5s;
+}
+.clip.active{
+    transition-delay: 0.5s;
+    transform: translate(-50%,-50%) scale(1);
+}
+.clip video
+{
+    outline: none;
+    border: 10px solid #fff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    max-width: 900px;
+}
+.clip .close
+{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    border: 2px solid #f42e79;
+}
+
+.box{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10px;
+    width: 10px;
+    border: 2px solid black;
+    animation: box1 5s ease-in-out infinite;
+}
+
+@keyframes box1 {
+    0%,
+    100% {
+        left: 0%;
+    }
+
+    50% {
+        left: 20%;
+    }
+}
+
+#preLoader{
+    background: #fff;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    position: fixed;
+}

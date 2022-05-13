@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <button class="test">Button</button>
+    <h1 class="test">Text...</h1>
+
+    <div id="preLoader">
+            <h3 class="scan-text">Scanning...</h3>
+    </div>
+    
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <div class="btn">
+        <div class="play"></div>
+        <p>Play video</p>
+    </div>
+    <div class="clip">
+        <video src="Cách quay màn hình máy tính - Quantrimang.com - Google Chrome 7_10_2021 9_50_59 AM.mp4" controls></video>
+        <b class="close">Close</b>
+    </div>
+    <label>
+        <input type="checkbox" id="dark_button">
+        <span class="check"></span>
+    </label>
+
+    <form class="search-box">
+        <button id="search-btn">
+            <i class="fa-solid fa-search"></i>
+        </button>
+        <input type="text" required>
+    </form>
+
+
+    <header class="header">
+        <nav class="main-menu">
+            <a href="">Home</a>
+            <a href="">Contact</a>
+            <a href="">About</a>
+        </nav>
+    </header>
+
+
+    <form action="">
+        <input type="password" name="" id="password">
+        <div id="eye"><i class="fa-solid fa-eye"></i></div>
+
+    </form>
+
+
+    <img src="fingerPrint_01.png" id="img1" class="img" onclick="changeImage1()">
+    <img src="fingerPrint_02.png" id="img2" class="img" onclick="changeImage2()">
+
+    <img src="fingerPrint_01.png" id="imgChange" class="imgC" onmouseover="rotate()" onmouseout="not_rotate()">
+
+    <div class="scan">
+        <h1 id="demo"></h1>
+        <div class="fingerprint">
+        </div>
+        <h3 class="scan-text">Scanning...</h3>
+    </div>
+
+    <div class="scan">
+        <h1 id="demo"></h1>
+        <div class="fingerprint">
+        </div>
+        <h3 class="scan-text">Scanning...</h3>
+    </div>
+
+    <div id="backtotop">
+        <i class="fa-solid fa-angle-up"></i>
+    </div>
+
+
+    <script>
+        let test = document.getElementsByClassName("test");
+        for(let i = 0 ; i < test.length ; i++){
+            test[i].onclick = function(){
+                alert("Đã click");};}
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+
+    <script src="main.js"></script>
+
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector("."), {
+            max: 25,
+            speed: 400
+        });
+
+        
+    </script>
+
+</body>
+
+
+
+
+
+
+
+</html>
+
+
